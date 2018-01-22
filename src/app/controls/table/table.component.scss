@@ -1,0 +1,97 @@
+@import '~assets/sass/controls/table';
+
+.aw-table {
+
+    overflow: auto;
+    
+    table {
+    
+        border-collapse: collapse;    
+        border-spacing: 0;
+        border: 1px solid rgba(0,0,0,.08);    
+        width: 100%;
+    
+        thead {
+    
+            td {
+                font-weight: bold;
+                background-color: #f1f1f1;
+                border: 1px solid rgba(0,0,0,.08);
+                border-left: none;
+    
+                div {
+                    
+                    white-space: nowrap;
+                    display: block;
+                    text-overflow: ellipsis;
+                    padding: 2px 4px;
+    
+                }
+    
+                span {
+                
+                    display: inline-block;
+                
+                }
+    
+                .order-nav {
+                    cursor: pointer;
+    
+                    &:hover {
+    
+                        color: rgba(0, 0, 0, 0.7);
+                    
+                    }
+                }
+            }
+        
+        }
+    
+        tbody {
+    
+            tr {
+                &:hover {
+    
+                    background-color: #fafafa;
+                
+                }
+            }
+            
+            td {
+                border-top: 1px solid rgba(0,0,0,.08);
+                padding: 2px 4px;
+                border: 1px solid rgba(0,0,0,.08);
+                border-left: none;
+                
+                .btn-nav {
+                    cursor: pointer;
+                    color: dodgerblue;
+                    
+                    &:hover {
+                    
+                        color: #24292e;
+                    
+                    }
+                }
+            }
+    
+            .on-edit {
+    
+                padding: 0;
+            
+            }
+    
+            .editing-column {
+            
+                width: 68px;
+                text-align: center;
+                padding-left: 12px;
+                padding-right: 12px;
+                white-space: nowrap;
+    
+            }
+    
+        }
+    }
+
+}

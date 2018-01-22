@@ -1,0 +1,56 @@
+<div class="aw-control">
+    <div class="aw-table">
+        <table>
+            <thead>
+                <tr>
+                    <td *ngFor="let header of headers">
+                        <div>
+                            <span class="header-text">{{capitalHeader ? header.text.toUpperCase() : header.text}}</span>
+                            <span class="sort-icon" title="Sorting">
+                                <i *ngIf="header.allowToShort" 
+                                    [ngClass]="{'fa': true, 'order-nav': true, 'fa-sort-alpha-asc': header.shortingIn === 'asc', 'fa-sort-alpha-desc': header.shortingIn === 'desc'}" 
+                                    aria-hidden="true" (click)="onShort(header)">
+                                </i>
+                            </span>
+                        </div>    
+                    </td>
+                    <ng-container *ngIf="tableEditingStyle === 0">
+                        <td class="editing-column">
+                        </td>
+                    </ng-container>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let row of rows" (click)="onRowClick(row)" (dblclick)="onRowDoubleClick(row)">
+                    <ng-container *ngIf="!row.deleted">
+                        <td *ngFor="let header of headers" [ngClass]="{'on-edit': editable && row.onEdit}">
+                            <aw-editable-content 
+                                [contentEditingMode]="1"
+                                [dataType]="header.dataType"
+                                [onEdit] = "editable && row.onEdit"
+                                [editable]="editable"
+                                [(value)]="row.data[header.id]"></aw-editable-content>
+                        </td>
+                        <ng-container *ngIf="tableEditingStyle === 0">
+                            <td [ngClass]="{'editing-column': true, 'on-edit': row.onEdit}">
+                                <a title="Edit" class="fa fa-pencil-square-o btn-nav" aria-hidden="true" (click)="editButtonClicked(row)"></a>
+                                <a title="Delete" class="fa fa-trash-o btn-nav" aria-hidden="true" (click)="deleteButtonClicked(row)"></a>
+                            </td>
+                        </ng-container>
+                    </ng-container>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <aw-pagination *ngIf="pagination"
+        (prev)="onPrev($event)"
+        (next)="onNext($event)"
+        (first)="onFirst($event)"
+        (last)="onLast($event)"
+        [currentPage]="currentPage"
+        [itemsPerPage]="itemsPerPage"
+        [itemPerPageValues]="itemPerPageValues"
+        [itemsTotal]="itemsTotal"
+        (itemPerPageChanged)="onItemsPerPageChanged($event)">
+    </aw-pagination>
+</div>

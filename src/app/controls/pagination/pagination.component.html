@@ -1,0 +1,23 @@
+<div class="aw-control">
+    <div class="pagination">
+      <!--<div class="nav-item" id="itemsPerPage">
+        <span>Display: </span>
+        <select [(ngModel)]="itemsPerPage" (change)="onItemsPerPageChange($event)">
+          <option *ngFor="let itemPerPageValue of itemPerPageValues" [value]="itemPerPageValue.value">{{itemPerPageValue.text}}</option>
+        </select>
+      </div>-->
+      <div class="nav-item" id="pagination-nav">
+          <i class="fa fa-angle-double-left" aria-hidden="true" (click)="onFirst()"></i>
+          <i class="fa fa-angle-left" aria-hidden="true" (click)="onPrev()"></i>
+          <span>{{currentPage + ' of ' + pagesTotal}}</span>
+          <i class="fa fa-angle-right" aria-hidden="true" (click)="onNext()"></i>
+          <i class="fa fa-angle-double-right" aria-hidden="true" (click)="onLast()"></i>
+      </div>
+      <!--<div class="nav-item" id="goToPage">
+        <span>Go to: </span>
+        <select [(ngModel)]="currentPage" (change)="onGoToPageChange($event)">
+          <option *ngFor="let index of pagesTotal | times" [value]="index + 1">{{ index + 1 }}</option>
+        </select>
+      </div>-->
+    </div>
+</div>

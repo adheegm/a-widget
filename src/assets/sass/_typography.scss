@@ -1,0 +1,45 @@
+@import '~assets/sass/variables';
+
+a {
+	text-decoration: none;
+	color: $color1;
+}
+
+ul, li {
+    margin: 0;
+    padding: 0;
+}
+
+h1, h2, h3, p {
+    color: $black;
+	font-family: "Open Sans", sans-serif;
+}
+
+h1 {
+	font-size: 40px;
+	font-weight: normal;
+	line-height: 48px;
+	margin: 0 0 26px;
+}
+
+h2 {
+	font-size: 26px;
+	font-weight: normal;
+	line-height: 36px;
+	margin: 0 0 18px;
+	padding: 12px 0 0;
+}
+
+h3 {
+	font-size: 16px;
+	font-weight: bold;
+	line-height: 18px;
+	margin: 0 0 18px;
+	padding: 12px 0 0;
+}
+
+p {
+	font-size: 14px;
+	line-height: 18px;
+	margin: 0 0 18px;
+}

@@ -1,0 +1,18 @@
+<section class="content">
+  <div>
+    <div>
+      <!--<div>
+          <input type="checkbox" id="editOnRowClick" name="editOnRowClick" [(ngModel)]="editTableOnRowClick" (ngModelChange)="onChange($event)"> 
+          <label class="control-label" for="editOnRowClick">Edit on row click</label>
+      </div>-->
+      <aw-table 
+        [tableEditingStyle]="tableEditingStyle"
+        [pagination]="true"
+        [itemsPerPage]="10"
+        [editable]="false"
+        [headers]="headers"
+        [(data)]="data">
+      </aw-table>
+    </div>
+  </div>
+</section>

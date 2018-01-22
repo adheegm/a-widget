@@ -1,0 +1,32 @@
+@import '~assets/sass/variables';
+
+#header, #content, #footer {
+    display: block;
+}
+
+#header {
+    padding: 8px;
+}
+
+main {
+    padding: 8px 8px 128px 8px;
+    max-width: 1200px;
+    margin: 0 auto;
+
+    section.content {        
+        background-color: $white;
+        border-radius: $radius;
+        padding: 12px;
+        margin: 4px;
+    }
+}
+
+#footer {      
+    height: 120px;
+    width: 100%;
+    bottom: 0;
+
+    padding: 8px;  
+
+    position: absolute;
+}

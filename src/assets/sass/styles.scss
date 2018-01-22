@@ -1,0 +1,27 @@
+@import 'variables';
+@import 'mixins';
+@import 'normalize';
+@import 'typography';
+@import '../../../node_modules/font-awesome/scss/font-awesome';
+
+@import url(https://fonts.googleapis.com/css?family=Playfair+Display:400,400italic);
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700);
+
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    font-family: "Open Sans", sans-serif;
+    font-size: 14px;
+    
+    color: $black;
+
+    height: 100%;
+
+    #wrapper {
+        display: block;
+        position: relative;
+        min-height: 100%;
+    }
+}

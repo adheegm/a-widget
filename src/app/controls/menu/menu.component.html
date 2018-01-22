@@ -1,0 +1,12 @@
+<div class="aw-control">
+    <div class="aw-menu">
+        <a *ngFor="let menu of menus" href="{{menu.link}}">{{menu.title}}</a>
+        
+        <!--<div *ngIf="!menu.subs;else subMenus"></div>
+        <ng-template #subMenus>
+            <ul>
+                <li>Li</li>
+            </ul>
+        </ng-template>-->
+    </div>
+</div>

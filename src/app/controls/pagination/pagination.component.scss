@@ -1,0 +1,28 @@
+@import '~assets/sass/controls/pagination';
+
+.aw-control {
+    .pagination {
+        text-align: center;
+        padding: 4px;
+        .nav-item {
+            
+            display: inline-block;
+    
+            select {
+                padding: 2px 4px;
+            }
+    
+        }
+    
+        i {
+            cursor: pointer;
+            padding: 4px;
+            color: dodgerblue;
+            font-weight: 500;
+    
+            &:hover {
+                color: inherit;
+            }
+        }
+    }
+}

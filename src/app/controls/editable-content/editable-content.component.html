@@ -1,0 +1,30 @@
+<div class="aw-control">
+  <div class="editable-content" *ngIf="!onEdit; else tEditable" (dblclick)="onClick()" title="{{ editable && !onEdit ? 'Click to edit value' : '' }}">{{value || '&nbsp;'}}</div>
+  <ng-template #tEditable>
+    <div [ngSwitch]="onEditDOM">
+      <ng-template [ngSwitchCase]="SELECT_OPTION">
+          <select 
+            [(ngModel)]="value" 
+            (dblclick)="onDoubleClick($event)"></select>
+        </ng-template>
+        <ng-template ngSwitchCase="RADIO_BUTTON">
+          <input 
+            type="radio" 
+            [(ngModel)]="value" 
+            (dblclick)="onDoubleClick($event)"/>
+        </ng-template>
+        <ng-template ngSwitchCase="CHECK_BOX">
+          <input 
+            type="checkbox" 
+            [(ngModel)]="value" 
+            (dblclick)="onDoubleClick($event)"/>
+        </ng-template>
+        <ng-template ngSwitchDefault>
+          <input 
+            type="text" 
+            [(ngModel)]="value" 
+            (dblclick)="onDoubleClick($event)"/>
+        </ng-template>
+      </div>
+  </ng-template>
+</div>
