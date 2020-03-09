@@ -16,7 +16,7 @@ const routes: Routes = [
     path: '', component: HomeComponent
   },
   {
-    path: 'controls', loadChildren: './components/pages/controls/controls.module#ControlsModule'
+    path: 'controls', loadChildren: () => import('./components/pages/controls/controls.module').then(m => m.ControlsModule)
   }
 ];
 
