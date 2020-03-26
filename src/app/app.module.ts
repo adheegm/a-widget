@@ -18,7 +18,7 @@ import { MenuModule } from './controls/menu/menu.component';
     HomeComponent
   ],
   imports: [
-    BrowserModule,
+    BrowserModule.withServerTransition({ appId: 'serverApp' }),
     AppRoutingModule,
     MenuModule
   ],
